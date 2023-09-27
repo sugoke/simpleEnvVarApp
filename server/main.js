@@ -1,10 +1,10 @@
-import { Meteor } from 'meteor/meteor';
-
-
 Meteor.startup(() => {
-  // Reading the environment variable
   const testEnvVar = process.env.TEST_ENV_VAR;
+  console.log("Value of TEST_ENV_VAR:", testEnvVar);
 
-  // Logging the value to console
-  console.log(`The value of TEST_ENV_VAR is: ${testEnvVar}`);
+  if (!testEnvVar) {
+    console.log("TEST_ENV_VAR is not set or is undefined.");
+  } else {
+    console.log(`TEST_ENV_VAR is set to ${testEnvVar}`);
+  }
 });
